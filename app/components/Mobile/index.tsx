@@ -1,7 +1,8 @@
+import ValuesType from '@/app/types/ValuesType'
 import Product from './Product'
 import ProductType from '@/app/types/ProductType'
 
-const index = ({ form_data, setValues, values }: { form_data: ProductType[], setValues: any, values: any }) => {
+const index = ({ form_data, setValues, values }: { form_data: ProductType[], setValues: (e: React.ChangeEvent<HTMLInputElement>) => void, values: ValuesType }) => {
     return (
         <section className="border-t-[1px] border-[#ccc] py-[24px] flex flex-col gap-[32px] md:hidden">
             {

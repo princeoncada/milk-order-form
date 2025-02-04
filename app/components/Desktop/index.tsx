@@ -1,8 +1,9 @@
 import React from 'react'
 import Product from './Product'
 import ProductType from '@/app/types/ProductType'
+import ValuesType from '@/app/types/ValuesType'
 
-const index = ({ form_data, setValues, values, total }: { form_data: ProductType[], setValues: any, values: any,total: number }) => {
+const index = ({ form_data, setValues, values, total }: { form_data: ProductType[], setValues: (e: React.ChangeEvent<HTMLInputElement>) => void, values: ValuesType, total: number }) => {
     return (
         <section className="border-t-[1px] border-[#ccc] hidden md:flex">
             <table className="w-full">

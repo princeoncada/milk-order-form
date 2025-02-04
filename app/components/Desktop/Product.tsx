@@ -1,7 +1,8 @@
 import VariantType from '@/app/types/VariantType'
+import ValuesType from '@/app/types/ValuesType'
 import Variant from './Variant';
 
-const Product = ({ name, variants, setValues, values }: { name: string, variants: VariantType[], setValues: any, values: any }) => {
+const Product = ({ name, variants, setValues, values }: { name: string, variants: VariantType[], setValues: (e: React.ChangeEvent<HTMLInputElement>) => void, values: ValuesType }) => {
     return (
         <>
             <tr>
