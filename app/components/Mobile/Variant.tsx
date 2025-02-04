@@ -25,13 +25,13 @@ const Variant = ({ variant, setValues, values }: { variant: VariantType, setValu
                 <div>
                     <div className="font-semibold">Quantity</div>
                     <div>
-                        <input className='border text-center' onChange={setValues} data-cost={variant.cost} type="number" name={`${variant.code}`} value={values[`${variant.code}`]?.quantity || ""} />
+                        <input className='border text-center' onChange={setValues} data-cost={variant.cost} type="number" name={`${variant.code}-${variant.size}-${variant.desc}`} value={values[`${variant.code}-${variant.size}-${variant.desc}`]?.quantity || ""}/>
                     </div>
                 </div>
                 <div>
                     <div className="font-semibold">Subtotal</div>
                     <div>{(() => {
-                        const subtotal = (Math.round((values[variant.code]?.subtotal || 0) * 100) / 100).toFixed(2);
+                        const subtotal = (Math.round((values[`${variant.code}-${variant.size}-${variant.desc}`]?.subtotal || 0) * 100) / 100).toFixed(2);
                         return `$${subtotal}`;
                     })()}</div>
                 </div>

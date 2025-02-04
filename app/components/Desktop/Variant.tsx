@@ -11,11 +11,11 @@ const Variant = ({ variant, setValues, values}: { variant: VariantType, setValue
             <td>{`$${(Math.round(variant.cost * 100) / 100).toFixed(2)} / $${(Math.round(variant.retail * 100) / 100).toFixed(2)}`}</td>
             <td>{variant.size}</td>
             <td>
-                <input className='border text-center' onChange={setValues} data-cost={variant.cost} type="number" name={`${variant.code}`} value={values[`${variant.code}`]?.quantity || ""}/>
+                <input className='border text-center' onChange={setValues} data-cost={variant.cost} type="number" name={`${variant.code}-${variant.size}-${variant.desc}`} value={values[`${variant.code}-${variant.size}-${variant.desc}`]?.quantity || ""}/>
             </td>
             <td>
                 {(() => {
-                    const subtotal = (Math.round((values[variant.code]?.subtotal || 0) * 100) / 100).toFixed(2);
+                    const subtotal = (Math.round((values[`${variant.code}-${variant.size}-${variant.desc}`]?.subtotal || 0) * 100) / 100).toFixed(2);
                     return `$${subtotal}`;
                 })()}
             </td>
